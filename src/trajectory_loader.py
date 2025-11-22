@@ -118,7 +118,7 @@ def save_track(df: pd.DataFrame, directory: str = "../data/raw"):
 if __name__ == "__main__":
     client = OpenSkyClient()
 
-    icao24_list = ["a24f71", "3c4b26"]  # multiple aircraft
+    icao24_list = ["4b1902", "3c4b26"]  # multiple aircraft
     timestamps = [int(datetime.now(timezone.utc).timestamp()) - 3600]  # 1h ago
 
     tracks = client.get_tracks_batch(icao24_list, timestamps)

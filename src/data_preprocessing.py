@@ -5,17 +5,24 @@ import glob
 
 RAW_DIR = os.path.join("..", "data", "raw")
 PROCESSED_DIR = os.path.join("..", "data", "processed")
+OUTPUT_DIR = OUTPUT_CSV = os.path.join(PROCESSED_DIR, "processed_file.csv")
 os.makedirs(PROCESSED_DIR, exist_ok=True)
 
 # -------------------------------
 # Helper : safe diff / safe division
 # -------------------------------
 def safe_diff(series):
+    """
+    Compute difference of a pandas Series safely.
+    """
     if series is None:
         return 0
     return series.diff().fillna(0)
 
 def safe_div(numerator, denominator):
+    """
+    Safely divide two pandas Series, handling division by zero.
+    """
     denominator = denominator.replace(0, np.nan)
     return (numerator / denominator).replace([np.inf, -np.inf], 0).fillna(0)
 
@@ -131,9 +138,8 @@ def preprocess_all():
             print(f"[INFO] Skipped {filename}")
             continue
 
-        save_path = os.path.join(PROCESSED_DIR, filename)
-        df.to_csv(save_path, index=False)
-        print(f"[INFO] Processed and saved → {save_path}")
+        df.to_csv(OUTPUT_CSV, index=False)
+        print(f"[INFO] Processed and saved → {OUTPUT_CSV}")
 
 if __name__ == "__main__":
     preprocess_all()

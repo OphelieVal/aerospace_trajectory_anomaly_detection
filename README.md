@@ -26,14 +26,18 @@ The goal is to explore trajectory analysis techniques relevant to aerospace syst
 - pip or conda  
 
 ### Install dependencies    
+At the racine of the project, execute the following file to create a virtual environment and install the necessary dependencies :
+``` ./setup_env.bat ``` 
 
-``` pip install -r requirements.txt ``` 
+[Warning] This file works on a Windows system only
 
 Typical dependencies include :    
 - numpy 
 - pandas    
 - matplotlib    
 - scikit-learn  
+- pyarrow (parquet file)
+- requests
 
 ### OpenSky CLIENT API
 Online access to OpenSky :  
@@ -42,6 +46,7 @@ To access data, you must first ensure to follow throught the specified steps :
 2. On your **Account** page (default one) download your credentials     
 3. Add a ``` .env ``` file at the racine of the project and enter your credentials like below :     
    ``` OPEN_SKY_CLIENT_ID=your_client_id    OPEN_SKY_CLIENT_SECRET=your_client_secret ```   
+
 
 ### Usage   
 Make sure to move into the ```src/``` folder to execute the following commands  

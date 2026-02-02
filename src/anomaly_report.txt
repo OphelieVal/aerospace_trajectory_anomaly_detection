@@ -1,0 +1,28 @@
+======================================================================
+AIRCRAFT TRAJECTORY ANOMALY DETECTION REPORT
+======================================================================
+
+Total trajectory points analyzed: 26938
+Total flights: 37
+Anomalous points: 26938
+Anomaly rate: 100.00%
+
+Anomaly Types:
+----------------------------------------------------------------------
+  UNUSUAL_VERTICAL_SPEED: 325 occurrences
+  EXTREME_ACCELERATION: 52 occurrences
+  ALTITUDE_JUMP: 19 occurrences
+  SHARP_TURN: 15 occurrences
+
+Top 10 Flights with Most Anomalies:
+----------------------------------------------------------------------
+  N108RF (a023e9): 1985 anomalous points
+  N1254D (a0692d): 1594 anomalous points
+  TKJ6QP (4bb2a9): 1337 anomalous points
+  AFR98ZZ (39bdb0): 1231 anomalous points
+  SWA799 (a1442f): 1157 anomalous points
+  VOI182 (0d0cb1): 1149 anomalous points
+  IFA2442 (3ce8e8): 1147 anomalous points
+  EXS2114 (407177): 1091 anomalous points
+  THY6401 (4ba9f6): 1064 anomalous points
+  APG775 (758550): 1035 anomalous points

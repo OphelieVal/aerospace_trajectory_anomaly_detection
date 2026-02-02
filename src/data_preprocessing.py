@@ -3,7 +3,7 @@ import numpy as np
 import os
 import glob
 
-RAW_DIR = os.path.join("..", "data", "raw")
+VALIDATED_DIR = os.path.join("..", "data", "validated")
 PROCESSED_DIR = os.path.join("..", "data", "processed")
 OUTPUT_DIR = OUTPUT_CSV = os.path.join(PROCESSED_DIR, "processed_file.csv")
 os.makedirs(PROCESSED_DIR, exist_ok=True)
@@ -127,8 +127,8 @@ def preprocess_all():
     """
     Preprocess all raw CSV files and save processed versions.
     """
-    files = glob.glob(os.path.join(RAW_DIR, "*.csv"))
-    print(f"[INFO] Found {len(files)} files in raw data folder.")
+    files = glob.glob(os.path.join(VALIDATED_DIR, "*.csv"))
+    print(f"[INFO] Found {len(files)} files in validated data folder.")
 
     for filepath in files:
         df = preprocess_file(filepath)
